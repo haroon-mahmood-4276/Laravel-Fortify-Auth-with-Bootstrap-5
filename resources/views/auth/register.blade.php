@@ -68,8 +68,10 @@
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6">
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror"
-                                    name="password_confirmation" id="password_confirmation-" placeholder="Confirm Password">
+                                <input type="password"
+                                    class="form-control @error('password_confirmation') is-invalid @enderror"
+                                    name="password_confirmation" id="password_confirmation-"
+                                    placeholder="Confirm Password">
                                 <label for="password_confirmation">Confirm Password</label>
                                 @error('password_confirmation')
                                     <span class="invalid-feedback">
@@ -77,17 +79,6 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group d-flex justify-content-lg-between">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                                {{ old('remember') ? 'checked' : '' }}>
-
-                            <label class="form-check-label" for="remember">
-                                {{ __('Remember Me') }}
-                            </label>
                         </div>
                     </div>
 
