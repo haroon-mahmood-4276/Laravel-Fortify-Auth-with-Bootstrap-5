@@ -49,6 +49,8 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        {{ View::make('layout.footer') }}
     </div>
 
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>

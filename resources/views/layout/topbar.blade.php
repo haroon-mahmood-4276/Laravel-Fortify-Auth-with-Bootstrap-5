@@ -1,6 +1,6 @@
 <header
     class="d-flex flex-wrap align-items-center justify-content-lg-around justify-content-md-around py-3 mb-4 border-bottom">
-    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+    <a href="/" class="d-flex align-items-center mb-2 mb-md-0 text-dark text-decoration-none">
         <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
             <use xlink:href="#bootstrap" />
         </svg>
@@ -14,8 +14,28 @@
         <li><a href="#" class="nav-link px-2 link-dark">About</a></li>
     </ul>
 
-    <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2">Login</button>
-        <button type="button" class="btn btn-primary">Sign-up</button>
-    </div>
+    @auth
+        <div class="dropdown text-end">
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="{{asset('images/98681.jpg')}}" alt="mdo" width="32" height="32" class="rounded-circle">
+                <strong>{{auth()->user()->name}}</strong>
+            </a>
+            <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="{{ route('logout') }}">Sign out</a></li>
+            </ul>
+        </div>
+
+    @else
+        <div class="col-md-3 text-end">
+            <a href="{{ route('login') }}" class="btn btn-outline-primary me-2">Login</a>
+            <a href="{{ route('register') }}" class="btn btn-primary">Sign-up</a>
+        </div>
+    @endauth
 </header>

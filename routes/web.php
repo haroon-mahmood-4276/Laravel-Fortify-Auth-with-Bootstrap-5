@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('logout', function (Request $request) {
+//    dd($request->input());
     $request->session()->invalidate();
     $request->session()->regenerate();
     return redirect()->route('login');
