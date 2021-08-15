@@ -14,7 +14,7 @@
                     @csrf
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control @error('username') is-invalid @enderror" name="username"
-                            {{ old('username') }} id="username" required autofocus>
+                            {{ old('username') }} id="username" required placeholder="Username" autofocus>
                         <label for="username">Email address or Username</label>
 
                         @error('username')
@@ -25,7 +25,7 @@
                     </div>
                     <div class="form-floating mb-3">
                         <input type="password" class="form-control @error('password') is-invalid @enderror"
-                            name="password" required id="password">
+                            name="password" required placeholder="Password" id="password">
                         <label for="password">Password</label>
                         @error('password')
                             <span class="invalid-feedback">
@@ -53,7 +53,7 @@
 
                     <div class="d-flex justify-content-end mt-2">
                         <button type="reset" class="btn btn-danger mx-1">Reset</button>
-                        <button type="submit" class="btn btn-primary mx-1">Submit</button>
+                        <button type="submit" class="btn btn-primary mx-1">Login</button>
 
                     </div>
                 </form>

@@ -84,7 +84,7 @@
 
                     <div class="d-flex justify-content-end mt-2">
                         <button type="reset" class="btn btn-danger mx-1">Reset</button>
-                        <button type="submit" class="btn btn-primary mx-1">Submit</button>
+                        <button type="submit" class="btn btn-primary mx-1">Register</button>
                     </div>
                 </form>
             </div>

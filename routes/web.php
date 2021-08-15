@@ -24,10 +24,3 @@ Route::middleware('auth')->group(function () {
         return view('shared.dashboard');
     });
 });
-
-Route::get('logout', function (Request $request) {
-    Auth::logout();
-    $request->session()->invalidate();
-    $request->session()->regenerateToken();
-    return redirect('/')->route('login');
-});

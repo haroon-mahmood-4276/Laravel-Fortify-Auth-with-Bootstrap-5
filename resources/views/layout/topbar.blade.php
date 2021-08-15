@@ -18,8 +18,8 @@
         <div class="dropdown text-end">
             <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
                 data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="{{asset('images/98681.jpg')}}" alt="mdo" width="32" height="32" class="rounded-circle">
-                <strong>{{auth()->user()->name}}</strong>
+                <img src="{{ asset('images/98681.jpg') }}" alt="mdo" width="32" height="32" class="rounded-circle">
+                <strong>{{ auth()->user()->name }}</strong>
             </a>
             <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
                 <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -28,7 +28,12 @@
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="{{ route('logout') }}">Sign out</a></li>
+                <li>
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <a class="dropdown-item" id="logout" onclick="this.parentNode.submit();">Sign out</a>
+                    </form>
+                </li>
             </ul>
         </div>
 
