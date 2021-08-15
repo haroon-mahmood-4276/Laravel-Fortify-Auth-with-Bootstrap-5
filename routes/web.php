@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,8 +26,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('logout', function (Request $request) {
-//    dd($request->input());
+    Auth::logout();
     $request->session()->invalidate();
-    $request->session()->regenerate();
-    return redirect()->route('login');
+    $request->session()->regenerateToken();
+    return redirect('/')->route('login');
 });
