@@ -22,10 +22,10 @@ Route::middleware('auth')->group(function () {
     Route::get('dashboard', function () {
         return view('shared.dashboard');
     });
+});
 
-    Route::get('logout', function (Request $request) {
-        $request->session()->invalidate();
-        $request->session()->regenerate();
-        return redirect()->route('login');
-    });
+Route::get('logout', function (Request $request) {
+    $request->session()->invalidate();
+    $request->session()->regenerate();
+    return redirect()->route('login');
 });

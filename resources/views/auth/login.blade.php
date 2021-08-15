@@ -13,11 +13,11 @@
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
-                            {{ old('email') }} id="email" required autofocus>
-                        <label for="email">Email address or Username</label>
+                        <input type="text" class="form-control @error('username') is-invalid @enderror" name="username"
+                            {{ old('username') }} id="username" required autofocus>
+                        <label for="username">Email address or Username</label>
 
-                        @error('email')
+                        @error('username')
                             <div class="invalid-feedback">
                                 <strong>{{ $message }}</strong>
                             </div>
